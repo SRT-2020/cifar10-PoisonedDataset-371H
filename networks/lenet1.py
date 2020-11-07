@@ -1,7 +1,6 @@
 import keras
 import numpy as np
 from keras import optimizers
-from lenet1 import cifar10
 from keras.models import Sequential, load_model
 from keras.layers import Conv2D, Dense, Flatten, MaxPooling2D
 from keras.callbacks import LearningRateScheduler, TensorBoard, ModelCheckpoint
@@ -22,7 +21,7 @@ class LeNet1:
         self.epochs             = epochs
         self.iterations         = 391
         self.weight_decay       = 0.0001
-        self.log_filepath       = r'networks/models/lenet1/'
+        self.log_filepath       = r'networks/models/lenet/'
 
         if load_weights:
             try:

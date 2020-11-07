@@ -7,7 +7,7 @@ from keras.layers import Conv2D, Dense, Flatten, MaxPooling2D
 from keras.callbacks import LearningRateScheduler, TensorBoard, ModelCheckpoint
 from keras.preprocessing.image import ImageDataGenerator
 from keras.regularizers import l2
-from networks.lenet1 import LeNet
+from networks.lenet1 import LeNet1
 import random
 
 
@@ -53,7 +53,7 @@ def pdAttack(data, numP):
             x_train[i] = temp
         data1 = (x_train, y_train),(x_test, y_test)
         return data1
-            
+        LeNet1()
             
 
     if(numP == 2):
@@ -74,7 +74,7 @@ def pdAttack(data, numP):
             perturb_image(pixel, temp)
             x_train[i] = temp
         data2 = (x_train, y_train),(x_test, y_test)
-        return data2
+        
     
     if(numP == 3):
         for i in range(len(x_train))
