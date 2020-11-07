@@ -7,6 +7,7 @@ from keras.layers import Conv2D, Dense, Flatten, MaxPooling2D
 from keras.callbacks import LearningRateScheduler, TensorBoard, ModelCheckpoint
 from keras.preprocessing.image import ImageDataGenerator
 from keras.regularizers import l2
+from pickData import pickData
 
 from networks.train_plot import PlotLearning
 
@@ -14,6 +15,7 @@ from networks.train_plot import PlotLearning
 
 def pickData(data):
     dataUsed = data
+    return dataUsed
 
 class LeNet:
     def __init__(self, epochs=200, batch_size=128, load_weights=True):
