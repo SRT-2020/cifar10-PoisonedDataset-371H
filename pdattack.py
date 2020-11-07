@@ -7,7 +7,9 @@ from keras.layers import Conv2D, Dense, Flatten, MaxPooling2D
 from keras.callbacks import LearningRateScheduler, TensorBoard, ModelCheckpoint
 from keras.preprocessing.image import ImageDataGenerator
 from keras.regularizers import l2
+from networks.lenet1 import LeNet
 import random
+
 
 data = cifar10.load_data()
 
@@ -49,8 +51,8 @@ def pdAttack(data, numP):
             temp = x_train[i]
             perturb_image(pixel, temp)
             x_train[i] = temp
-            data1 = (x_train, y_train),(x_test, y_test)
-            return data1
+        data1 = (x_train, y_train),(x_test, y_test)
+        return data1
             
             
 
@@ -71,10 +73,11 @@ def pdAttack(data, numP):
             temp = x_train[i]
             perturb_image(pixel, temp)
             x_train[i] = temp
-            data2 = (x_train, y_train),(x_test, y_test)
-            return data2
+        data2 = (x_train, y_train),(x_test, y_test)
+        return data2
     
     if(numP == 3):
+        for i in range(len(x_train))
         x1 = random.randint(0,31) # Get random values for two pixel coordiantes and colors
         x2 = random.randint(0,31)
         x3 = random.randint(0,31)
@@ -93,10 +96,11 @@ def pdAttack(data, numP):
         pixel = np.array([])
         pixel = np.append([x1,y1,r1,g1,b1],[x2,y2,r2,g2,b2],[x3,y3,r3,g3,b3])
         temp = x_train[i]
-        preturb_image(pixel, temp)
+        perturb_image(pixel, temp)
         x_train[i] = temp
-        data3 = (x_train,y_train),(x_test,y_test)
-        return data3
+    data3 = (x_train,y_train),(x_test,y_test)
+    return data3
+
 
 
         
