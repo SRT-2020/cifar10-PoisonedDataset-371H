@@ -10,9 +10,6 @@ from keras.regularizers import l2
 import random
 
 data = cifar10.load_data()
-data1 = NULL
-data2 = NULL
-data3 = NULL
 
 def perturb_image(xs, img):
     # If this function is passed just one perturbation vector,
