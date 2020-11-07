@@ -13,7 +13,7 @@ from networks.train_plot import PlotLearning
 # Code taken from https://github.com/BIGBALLON/cifar-10-cnn
 
 class LeNet:
-    def __init__(self, data, epochs=200, batch_size=128, load_weights=True):
+    def __init__(self, data=cifar10.load_data(), epochs=200, batch_size=128, load_weights=True):
         self.name               = 'lenet'
         self.model_filename     = 'networks/models/lenet.h5'
         self.num_classes        = 10
