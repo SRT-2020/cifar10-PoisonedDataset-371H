@@ -7,6 +7,7 @@ from keras.layers import Conv2D, Dense, Flatten, MaxPooling2D
 from keras.callbacks import LearningRateScheduler, TensorBoard, ModelCheckpoint
 from keras.preprocessing.image import ImageDataGenerator
 from keras.regularizers import l2
+import random
 
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
 data1 = NULL
@@ -38,7 +39,7 @@ def perturb_image(xs, img):
     
     return imgs
 
-def pdAttack((x_train, y_train), (x_test, y_test), numP):
+def pdAttack(((x_train,y_train),(x_test,y_test)), numP):
     if (numP == 1):
         for i in range(len(x_train)):
             x = random.randint(0,31)

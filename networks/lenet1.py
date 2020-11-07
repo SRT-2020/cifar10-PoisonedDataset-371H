@@ -12,7 +12,7 @@ from pdattack import data1
 from networks.train_plot import PlotLearning
 
 # Code taken from https://github.com/BIGBALLON/cifar-10-cnn
-class LeNet1:
+class LeNet:
     def __init__(self, epochs=200, batch_size=128, load_weights=True):
         self.name               = 'lenet1'
         self.model_filename     = 'networks/models/lenet.h5'
