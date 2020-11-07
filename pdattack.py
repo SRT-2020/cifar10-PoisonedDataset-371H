@@ -90,7 +90,8 @@ def pdAttack(data, numP):
             g3 = random.randint(0,255)
             b3 = random.randint(0,255)
             pixel = np.array([])
-            pixel = np.append([x1,y1,r1,g1,b1],[x2,y2,r2,g2,b2],[x3,y3,r3,g3,b3])
+            pixel = np.append([x1,y1,r1,g1,b1],[x2,y2,r2,g2,b2])
+            pixel = np.append([x3,y3,r3,g3,b3])
             temp = x_train[i]
             perturb_image(pixel, temp)
             x_train[i] = temp
