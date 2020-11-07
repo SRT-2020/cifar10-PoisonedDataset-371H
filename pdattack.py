@@ -1,17 +1,13 @@
 import keras
 import numpy as np
 from keras import optimizers
-from keras.datasets import cifar10
 from keras.models import Sequential, load_model
 from keras.layers import Conv2D, Dense, Flatten, MaxPooling2D
 from keras.callbacks import LearningRateScheduler, TensorBoard, ModelCheckpoint
 from keras.preprocessing.image import ImageDataGenerator
 from keras.regularizers import l2
-from networks.lenet1 import LeNet1
 import random
 
-
-data = cifar10.load_data()
 
 def perturb_image(xs, img):
     # If this function is passed just one perturbation vector,
