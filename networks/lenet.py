@@ -24,7 +24,6 @@ class LeNet:
         self.weight_decay       = 0.0001
         self.log_filepath       = r'networks/models/lenet/'
         self.data               = data
-
         if load_weights:
             try:
                 self._model = load_model(self.model_filename)

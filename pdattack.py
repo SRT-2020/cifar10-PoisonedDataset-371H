@@ -35,7 +35,8 @@ def perturb_image(xs, img):
     return imgs
 
 def pdAttack(data, numP):
-    (x_train,y_train),(x_test,y_test) = data
+    tempData = np.copy(data)
+    (x_train,y_train),(x_test,y_test) = tempData
     if (numP == 1):
         for i in range(len(x_train)):
             x = random.randint(0,31)
