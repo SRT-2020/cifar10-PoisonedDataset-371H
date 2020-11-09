@@ -37,67 +37,20 @@ def perturb_image(xs, img):
 def pdAttack(data, numP):
     tempData = np.copy(data)
     (x_train,y_train),(x_test,y_test) = tempData
-    if (numP == 1):
-        for i in range(len(x_train)/2):
-            x = random.randint(0,31)
-            y = random.randint(0,31)
-            r = random.randint(0,255)
-            g = random.randint(0,255)
-            b = random.randint(0,255)
-            pixel = np.array([x,y,r,g,b])
-            temp = x_train[i]
-            perturb_image(pixel, temp)
-            x_train[i] = temp
-        data1 = (x_train, y_train),(x_test, y_test)
-        return data1
-            
-
-    if(numP == 2):
-        for i in range(len(x_train)):
+    for i in range(len(x_train)):
+        pixel = np.array([])
+        for k in range(numP):
             x1 = random.randint(0,31) # Get random values for two pixel coordiantes and colors
-            x2 = random.randint(0,31)
             y1 = random.randint(0,31)
-            y2 = random.randint(0,31)
             r1 = random.randint(0,255) 
             g1 = random.randint(0,255)
             b1 = random.randint(0,255)
-            r2 = random.randint(0,255)
-            g2 = random.randint(0,255)
-            b2 = random.randint(0,255)
-            pixel = np.array([])
-            pixel = np.append([x1, y1, r1, g1, b1], [x2, y2, r2, g2, b2])
-            temp = x_train[i]
-            perturb_image(pixel, temp)
-            x_train[i] = temp
-        data2 = (x_train, y_train),(x_test, y_test)
-        return data2
-        
-    
-    if(numP == 3):
-        for i in range(len(x_train)):
-            x1 = random.randint(0,31) # Get random values for two pixel coordiantes and colors
-            x2 = random.randint(0,31)
-            x3 = random.randint(0,31)
-            y3 = random.randint(0,31)
-            y1 = random.randint(0,31)
-            y2 = random.randint(0,31)
-            r1 = random.randint(0,255) 
-            g1 = random.randint(0,255)
-            b1 = random.randint(0,255)
-            r2 = random.randint(0,255)
-            g2 = random.randint(0,255)
-            b2 = random.randint(0,255)
-            r3 = random.randint(0,255)
-            g3 = random.randint(0,255)
-            b3 = random.randint(0,255)
-            pixel = np.array([])
-            pixel = np.append([x1,y1,r1,g1,b1],[x2,y2,r2,g2,b2])
-            pixel = np.append(pixel,[x3,y3,r3,g3,b3])
-            temp = x_train[i]
-            perturb_image(pixel, temp)
-            x_train[i] = temp
-        data3 = (x_train,y_train),(x_test,y_test)
-        return data3
+            pixel = np.append(pixel, [x1,y1,r1,g1,b1])
+        temp = x_train[i]
+        perturb_image(pixel, temp)
+        x_train[i] = temp
+    data1 = (x_train,y_train),(x_test,y_test)
+    return data1
 
 
 
