@@ -38,16 +38,16 @@ def pdAttack(data, numP):
     tempData = np.copy(data)
     (x_train,y_train),(x_test,y_test) = tempData
     for i in range(len(x_train)):
-        pixel = np.array([])
+        temp = x_train[i]
         for k in range(numP):
+            pixel = np.array([])
             x1 = random.randint(0,31) # Get random values for two pixel coordiantes and colors
             y1 = random.randint(0,31)
             r1 = random.randint(0,255) 
             g1 = random.randint(0,255)
             b1 = random.randint(0,255)
             pixel = np.append(pixel, [x1,y1,r1,g1,b1])
-        temp = x_train[i]
-        perturb_image(pixel, temp)
+            perturb_image(pixel, temp)
         x_train[i] = temp
     data1 = (x_train,y_train),(x_test,y_test)
     return data1
