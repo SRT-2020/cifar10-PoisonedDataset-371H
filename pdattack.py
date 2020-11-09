@@ -38,7 +38,7 @@ def pdAttack(data, numP):
     tempData = np.copy(data)
     (x_train,y_train),(x_test,y_test) = tempData
     if (numP == 1):
-        for i in range(len(x_train)):
+        for i in range(len(x_train)/2):
             x = random.randint(0,31)
             y = random.randint(0,31)
             r = random.randint(0,255)
